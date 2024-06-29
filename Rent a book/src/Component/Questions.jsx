@@ -5,22 +5,50 @@ import { useState } from "react";
 const Questions = () => {
   const [selectedOption, setSelectedOption] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [num, setNum] = useState(0); // Adding state for progress bar
+  const [num, setNum] = useState(0);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+
+  const questions = [
+    {
+      question: "What is the capital of Nepal?",
+      options: ["Kathmandu", "Dhaka", "Bangladesh", "Chittagong"],
+    },
+    {
+      question: "What is the capital of Nepal?",
+      options: ["Kathmandu", "kaka", "Bangladesh", "Chittagong"],
+    },
+    {
+      question: "What is the capital of Nepal?",
+      options: ["Kathmandu", "Dhaka", "Bangladesh", "Chittagong"],
+    },
+    {
+      question: "What is the capital of Nepal?",
+      options: ["Kathmandu", "Dhaka", "Bangladesh", "Chittagong"],
+    },
+    {
+      question: "What is the capital of Nepal?",
+      options: ["Kathmandu", "Dhaka", "Bangladesh", "Chittagong"],
+    },
+  ];
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitted(true);
-    setNum(100);
+
+    setTimeout(() => {
+      if (currentQuestionIndex < questions.length - 1) {
+        setCurrentQuestionIndex(currentQuestionIndex + 1);
+        setNum(((currentQuestionIndex + 1) / questions.length) * 100);
+        setSelectedOption("");
+        setIsSubmitted(false);
+      } else {
+        setNum(((currentQuestionIndex + 1) / questions.length) * 100);
+        alert("Thank you");
+      }
+    }, 500);
   };
 
-  const question = "What is the capital of France?";
-  const options = ["Berlin", "Madrid", "Paris", "Rome"];
-  const question = "What is the capital of France?";
-  const options = ["Berlin", "Madrid", "Paris", "Rome"];
-  const question = "What is the capital of France?";
-  const options = ["Berlin", "Madrid", "Paris", "Rome"];
-  const question = "What is the capital of France?";
-  const options = ["Berlin", "Madrid", "Paris", "Rome"];
+  const { question, options } = questions[currentQuestionIndex];
 
   return (
     <div>
