@@ -1,6 +1,7 @@
 import NavBar from "./Component/Navbar";
 import "./App.css";
 import Home from "./Component/Home";
+import Questions from "./Component/Questions";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <div>
         <NavBar />
         <Home />
+        <Questions />
       </div>
     </>
   );
