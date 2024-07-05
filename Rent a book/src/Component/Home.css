@@ -1,0 +1,28 @@
+.content-1 {
+  flex: 50%;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 7rem 45px;
+}
+.content-1 h2 {
+  font-size: 55px;
+  margin-bottom: 0;
+}
+.content-1 h1 {
+  font-size: 55px;
+  text-decoration: underline;
+  margin-top: 0;
+}
+
+.content-1 .btn {
+  border-radius: 25px;
+  color: #fff;
+  background-color: rgb(222, 129, 16);
+  border: none;
+  padding: 10px;
+  font-size: 25px;
+}
+.content-2 {
+  flex: 50%;
+}
